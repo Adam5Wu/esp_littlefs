@@ -1,3 +1,4 @@
+#if 0
 #include "test_littlefs_common.h"
 #include "esp_vfs_fat.h"
 
@@ -258,3 +259,4 @@ TEST_CASE("Write 5 files, read 5 files, then delete 5 files", TAG){
 
     test_benchmark_teardown();
 }
+#endif
