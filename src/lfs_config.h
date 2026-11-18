@@ -87,10 +87,13 @@ extern const char ESP_LITTLEFS_TAG[];
 #endif
 
 // Runtime assertions
-#ifdef CONFIG_LITTLEFS_ASSERTS
+#if defined(CONFIG_LITTLEFS_ASSERTS) && !defined(NDEBUG)
 #define LFS_ASSERT(test) assert(test)
 #else
 #define LFS_ASSERT(test)
+#ifndef LFS_NO_ASSERT
+#define LFS_NO_ASSERT
+#endif
 #endif
 
 

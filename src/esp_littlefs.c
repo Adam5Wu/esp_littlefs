@@ -2443,7 +2443,7 @@ static int vfs_littlefs_utime(void *ctx, const char *path, const struct utimbuf 
 
 static time_t esp_littlefs_get_mtime_attr(esp_littlefs_t *efs, const char *path)
 {
-    time_t t;
+    time_t t = 0;
     int size;
     size = lfs_getattr(efs->fs, path, ESP_LITTLEFS_ATTR_MTIME,
             &t, sizeof(t));
